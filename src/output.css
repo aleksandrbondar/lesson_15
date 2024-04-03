@@ -593,26 +593,36 @@ video {
 }
 
 :root {
-  --color-green: #8c00ff;
+  /* FONT-SIZE */
+  --font-size-50: 50px;
+  --font-size-44: 44px;
+  --font-size-20: 20px;
+  /* COLOR */
+  --color-green: #13FF00;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-grey: #202020;
+  --color-light-grey: #8f8f8f;
+  --color-wheat: #E2E2E2;
+  /* BG COLOR */
+  --social-bg: #353535;
+  --about-bg: #161616;
+  --service-bg: #1d1d1d;
 }
 
-@media (min-width: 1px) and (max-width: 4000px) {
+@media (min-width: 1px) and (max-width: 1279.8px) {
   :root {
-    /* FONT-SIZE */
-    --font-size-50: 50px;
-    --font-size-44: 44px;
-    --font-size-20: 20px;
-    /* COLOR */
-    --color-green: #13FF00;
-    --color-white: #ffffff;
-    --color-black: #000000;
-    --color-grey: #202020;
-    --color-light-grey: #8f8f8f;
-    --color-wheat: #E2E2E2;
-    /* BG COLOR */
-    --social-bg: #353535;
-    --about-bg: #161616;
-    --service-bg: #1d1d1d;
+    --bg-hero: none;
+    --bg-hero-size: none;
+    --bg-header-size-width: cover;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --bg-hero: url('../assets/img/3840.png');
+    --bg-hero-size: 100%;
+    --bg-header-size-width: 66% 100%;
   }
 }
 
@@ -631,11 +641,11 @@ video {
 }
 
 .header__bg{
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background-image: url('../assets/img/hero_code.jpg');
   background-repeat: no-repeat;
-  background-size: 66.6% 100%;
+  background-size: var(--bg-header-size-width);
   background-position: right;
 }
 
@@ -700,9 +710,9 @@ video {
   z-index: 20;
   height: 100%;
   width: 100%;
-  background-image: url('../assets/img/3840.png');
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-image: var(--bg-hero);
+  background-size: var(--bg-hero-size) var(--bg-hero-size);
 }
 
 /* absolute item hero */
@@ -1030,8 +1040,6 @@ video {
 }
 
 .experience__title{
-  margin-left: auto;
-  margin-right: auto;
   display: block;
   width: -moz-fit-content;
   width: fit-content;
@@ -1052,8 +1060,7 @@ video {
   font-size: 1.875rem;
   line-height: 2.25rem;
   font-weight: 500;
-  --tw-text-opacity: 1;
-  color: rgb(19 255 0 / var(--tw-text-opacity));
+  color: var(--color-green);
 }
 
 .experience__item-place{

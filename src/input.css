@@ -4,27 +4,37 @@
 @tailwind utilities;
 
 :root {
-  --color-green: #8c00ff;
+  /* FONT-SIZE */
+  --font-size-50: 50px;
+  --font-size-44: 44px;
+  --font-size-20: 20px;
+  /* COLOR */
+  --color-green: #13FF00;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-grey: #202020;
+  --color-light-grey: #8f8f8f;
+  --color-wheat: #E2E2E2;
+
+  /* BG COLOR */
+  --social-bg: #353535;
+  --about-bg: #161616;
+  --service-bg: #1d1d1d;
 }
 
-@media (min-width: 1px) and (max-width: 4000px) {
+@media (min-width: 1px) and (max-width: 1279.8px) {
   :root {
-    /* FONT-SIZE */
-    --font-size-50: 50px;
-    --font-size-44: 44px;
-    --font-size-20: 20px;
-    /* COLOR */
-    --color-green: #13FF00;
-    --color-white: #ffffff;
-    --color-black: #000000;
-    --color-grey: #202020;
-    --color-light-grey: #8f8f8f;
-    --color-wheat: #E2E2E2;
+    --bg-hero: none;
+    --bg-hero-size: none;
+    --bg-header-size-width: cover;
+  }
+}
 
-    /* BG COLOR */
-    --social-bg: #353535;
-    --about-bg: #161616;
-    --service-bg: #1d1d1d;
+@media (min-width: 1280px) {
+  :root {
+    --bg-hero: url('../assets/img/3840.png');
+    --bg-hero-size: 100%;
+    --bg-header-size-width: 66% 100%;
   }
 }
 
@@ -41,10 +51,10 @@
 }
 
 .header__bg {
-  @apply w-full h-screen;
+  @apply w-full min-h-screen;
   background-image: url('../assets/img/hero_code.jpg');
   background-repeat: no-repeat;
-  background-size: 66.6% 100%;
+  background-size: var(--bg-header-size-width);
   background-position: right;
 }
 
@@ -76,10 +86,9 @@
 }
 
 .hero {
-  @apply absolute top-0 left-0 h-full w-full z-20;
-  background-image: url('../assets/img/3840.png');
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  @apply absolute top-0 left-0 h-full w-full z-20 bg-no-repeat;
+  background-image: var(--bg-hero);
+  background-size: var(--bg-hero-size) var(--bg-hero-size);
 }
 
 /* absolute item hero */
@@ -308,7 +317,7 @@
 }
 
 .experience__title {
-  @apply block mx-auto w-fit text-4xl font-bold text-white;
+  @apply block w-fit text-4xl font-bold text-white;
 }
 
 .experience__item {
@@ -316,7 +325,8 @@
 }
 
 .experience__item-title {
-  @apply font-medium text-3xl text-green;
+  @apply font-medium text-3xl;
+  color: var(--color-green);
 }
 
 .experience__item-place {
