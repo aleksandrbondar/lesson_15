@@ -8,70 +8,91 @@
   <title>Tailwind CSS</title>
 </head>
 
-<body class="body">
+<body>
   <header class="header">
-    <div class="header__bg">
 
-      <nav class="nav">
-        <div class="container">
-          <ul class="nav__list">
-            <li class="nav__item"><a class="nav__link nav__link--active" href="#">Home</a></li>
-            <li class="nav__item"><a class="nav__link" href="#">About Me</a></li>
-            <li class="nav__item"><a class="nav__link" href="#">Projects</a></li>
-            <li class="nav__item"><a class="nav__link" href="#">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
+    <!------------------------------NAV----------------------------------->
+    <nav class="nav">
+      <div class="container">
+        <ul class="nav__list">
+          <li class="nav__item"><a class="nav__link nav__link--active" href="#">Home</a></li>
+          <li class="nav__item"><a class="nav__link" href="#">About Me</a></li>
+          <li class="nav__item"><a class="nav__link" href="#">Projects</a></li>
+          <li class="nav__item"><a class="nav__link" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
 
-      <div class="hero">
-        <div class="hero__container">
-          <h3 class="hero__name">Alex Bondar</h3>
-          <div class="hero__name-line"></div>
+    <!------------------------------HERO----------------------------------->
+    <div class="hero">
+      <div class="hero__content">
+
+        <div class="hero__header">
+          <h3 class="hero__name">Alex Bondar<i class="hero__name-line"></i></h3>
 
           <div class="hero__title-container">
             <h1 class="hero__title">Full-Stack Developer & UI Designer.</h1>
             <p class="hero__title-shadow">Full-Stack Developer & UI Designer.</p>
           </div>
-
-          <h2 class="hero__subtitle">Full-Stack developer focused on creating Web and Mobile applications. I really like
-            different projects that solve real problems.</h2>
-
-          <div class="link__container">
-            <a class="link__download-cv" href="file.zip" download>Download CV</a>
-            <a class="link__portfolio" href="#">Portfolio</a>
-          </div>
-
-          <div class="social">
-            <ul class="social__list">
-              <li><a class="social__link" href="#"><img class="" src="assets/img/insta.svg" alt=""></a></li>
-              <li><a class="social__link" href="#"><img class="" src="assets/img/github.svg" alt=""></a></li>
-              <li><a class="social__link" href="#"><img class="" src="assets/img/linked.svg" alt=""></a></li>
-              <li><a class="social__link" href="#"><img class="" src="assets/img/facebook.svg" alt=""></a></li>
-              <li><a class="social__link" href="#"><img class="" src="assets/img/telega.svg" alt=""></a></li>
-            </ul>
-          </div>
         </div>
-      </div>
 
+        <p class="hero__subtitle">Full-Stack developer focused on creating Web and Mobile applications. I really like
+          different projects that solve real problems.</p>
+
+        <div class="link__container">
+          <a class="link__download-cv" href="assets/img/Troll-Face.svg" download>
+            <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#a)">
+                <path
+                  d="M27.708 29.167H8.75a8.75 8.75 0 0 1-1.42-17.385A11.69 11.69 0 0 1 17.5 5.833c2.628-.01 5.18.877 7.236 2.514a11.73 11.73 0 0 1 4.084 6.32 7.292 7.292 0 0 1-1.112 14.5M17.5 8.75a8.77 8.77 0 0 0-7.63 4.464l-.683 1.223-1.383.227A5.833 5.833 0 0 0 8.75 26.25h18.958a4.375 4.375 0 0 0 .671-8.699l-1.919-.292-.47-1.884A8.73 8.73 0 0 0 17.5 8.75m0 14.583L11.667 17.5h3.718v-4.375h4.23V17.5h3.718z"
+                  fill="var(--font-color-primary)" />
+              </g>
+              <defs>
+                <clipPath id="a">
+                  <path fill="var(--font-color-primary)" d="M0 0h35v35H0z" />
+                </clipPath>
+              </defs>
+            </svg>
+            Download CV</a>
+          <a class="link__portfolio" href="#">
+            <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M17.5 32.083c-8.054 0-14.583-6.529-14.583-14.583S9.446 2.917 17.5 2.917 32.083 9.446 32.083 17.5c-.008 8.05-6.532 14.575-14.583 14.583m0-26.25c-6.443 0-11.667 5.224-11.667 11.667S11.057 29.167 17.5 29.167 29.167 23.943 29.167 17.5C29.159 11.06 23.94 5.84 17.5 5.833m0 18.959L10.208 17.5l2.057-2.056 3.777 3.762v-8.998h2.916v8.998l3.777-3.762 2.057 2.056z"
+                fill="var(--font-color-quinary)" />
+            </svg>Portfolio</a>
+        </div>
+
+        <ul class="social">
+          <li><a class="social__link" href="#"><img class="" src="assets/img/insta.svg" alt=""></a></li>
+          <li><a class="social__link" href="#"><img class="" src="assets/img/github.svg" alt=""></a></li>
+          <li><a class="social__link" href="#"><img class="" src="assets/img/linked.svg" alt=""></a></li>
+          <li><a class="social__link" href="#"><img class="" src="assets/img/facebook.svg" alt=""></a></li>
+          <li><a class="social__link" href="#"><img class="" src="assets/img/telega.svg" alt=""></a></li>
+        </ul>
+      </div>
     </div>
+
   </header>
+
+  <!------------------------------MAIN----------------------------------->
   <main>
+
+    <!------------------------------ABOUT----------------------------------->
     <section class="about">
       <div class="container">
         <div class="about__container">
-          <h2 class="about__title z-20">About Me <i class="about__line"></i></h2>
+          <h2 class="about__title">About Me <i class="about__line"></i></h2>
           <p class="about__text">
-            I'm <strong class="strong">Alex Bondar</strong>, I'm <strong class="strong">29</strong> years old and I live
-            in <strong class="strong">Odesa</strong> -UA.
+            I'm <strong>Alex Bondar</strong>, I'm <strong>29</strong> years old and I live
+            in <strong>Odesa</strong> -UA.
           </p>
-          <p class="about__text"><strong class="strong">Full-Stack developer</strong> and <strong class="strong">UI
+          <p class="about__text"><strong>Full-Stack developer</strong> and <strong>UI
               Designer</strong>, I'm passionate about interfaces, from their
             creation to development. I
             like to learn more and more about the area, challenges that take me out of my comfort zone are the best.</p>
-          <p class="about__text mt-12">I have prototyped and developed <strong class="strong">Landing Pages</strong>,
-            <strong class="strong">Sites</strong>, <strong class="strong">E-commerces</strong>, <strong
-              class="strong">E-mails Marketing</strong>, <strong class="strong">Apps</strong> and <strong
-              class="strong">Programs</strong>.
+          <p class="about__text mt-12">I have prototyped and developed <strong>Landing Pages</strong>,
+            <strong>Sites</strong>, <strong>E-commerces</strong>, <strong>E-mails Marketing</strong>,
+            <strong>Apps</strong> and <strong>Programs</strong>.
           </p>
         </div>
       </div>
@@ -111,36 +132,36 @@
               xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M43.333 6.5H8.667a4.34 4.34 0 0 0-4.334 4.333v30.334A4.34 4.34 0 0 0 8.667 45.5h34.666a4.34 4.34 0 0 0 4.334-4.333V10.833A4.34 4.34 0 0 0 43.333 6.5M8.667 41.167v-26h34.666l.005 26z"
-                fill="var(--color-green)" />
+                fill="var(--font-color-secondary)" />
               <path
                 d="m20.135 20.135-8.032 8.032 8.032 8.032 3.063-3.064-4.968-4.968 4.968-4.968zm11.73 0-3.063 3.064 4.968 4.968-4.969 4.968 3.064 3.064 8.032-8.032z"
-                fill="var(--color-green)" />
+                fill="var(--font-color-secondary)" />
             </svg> Web Development</li>
           <li class="service__item"><svg width="52" height="52" viewBox="0 0 52 53" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M41.1667 6.625H10.8333C8.4435 6.625 6.5 8.60587 6.5 11.0417V41.9583C6.5 44.3941 8.4435 46.375 10.8333 46.375H41.1667C43.5565 46.375 45.5 44.3941 45.5 41.9583V11.0417C45.5 8.60587 43.5565 6.625 41.1667 6.625ZM41.1667 11.0417L41.1688 19.875H10.8333V11.0417H41.1667ZM10.8333 24.2917H28.1667V41.9583H10.8333V24.2917ZM32.5 41.9583V24.2917H41.1688L41.171 41.9583H32.5Z"
-                fill="var(--color-green)" />
+                fill="var(--font-color-secondary)" />
             </svg>
             UI Design</li>
           <li class="service__item"><svg width="52" height="52" viewBox="0 0 52 52" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M36.8333 4.33337H15.1667C12.7768 4.33337 10.8333 6.27687 10.8333 8.66671V43.3334C10.8333 45.7232 12.7768 47.6667 15.1667 47.6667H36.8333C39.2232 47.6667 41.1667 45.7232 41.1667 43.3334V8.66671C41.1667 6.27687 39.2232 4.33337 36.8333 4.33337ZM15.1667 36.8312V10.8334H36.8333L36.8377 36.8312H15.1667Z"
-                fill="var(--color-green)" />
+                fill="var(--font-color-secondary)" />
             </svg>
             Mobile Development</li>
           <li class="service__item"><svg width="52" height="52" viewBox="0 0 53 52" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M46.1984 5.15666C43.7192 4.61189 41.1865 4.3358 38.6459 4.33333C36.2465 4.18386 33.8406 4.50124 31.5667 5.26723C29.2928 6.03321 27.1956 7.23268 25.3959 8.79666C23.0256 11.1222 20.6774 13.4406 18.3513 15.7517C15.6792 15.47 9.34127 15.3183 5.10127 19.5217C4.68997 19.9276 4.45911 20.4768 4.45911 21.0492C4.45911 21.6216 4.68997 22.1707 5.10127 22.5767L30.0554 47.1033C30.4692 47.5069 31.0289 47.7334 31.6123 47.7334C32.1957 47.7334 32.7554 47.5069 33.1692 47.1033C37.4754 42.77 37.3429 36.66 37.0779 34.1033L44.1667 27.17C51.2113 20.2583 48.0092 7.28 47.8767 6.73833C47.7747 6.34754 47.5636 5.99243 47.2671 5.71299C46.9706 5.43355 46.6004 5.24088 46.1984 5.15666ZM40.9867 24.115L33.125 31.785C32.8704 32.0372 32.6829 32.347 32.5789 32.687C32.475 33.027 32.4577 33.3869 32.5288 33.735C33.0058 36.6336 32.5906 39.6059 31.3363 42.2717L9.98169 21.2767C12.7418 20.0303 15.8272 19.6519 18.815 20.1933C19.1685 20.2385 19.5279 20.199 19.8625 20.0783C20.197 19.9575 20.4969 19.7591 20.7363 19.5C20.7363 19.5 23.8279 16.3583 28.4875 11.7867C31.3527 9.52925 34.9802 8.4151 38.6459 8.66666C40.3701 8.67505 42.0908 8.81996 43.7913 9.1C44.3213 12.1983 45.1604 20.02 40.9867 24.115Z"
-                fill="var(--color-green)" />
+                fill="var(--font-color-secondary)" />
               <path
                 d="M34.7371 22.3167C37.1764 22.3167 39.1538 20.3766 39.1538 17.9834C39.1538 15.5901 37.1764 13.65 34.7371 13.65C32.2978 13.65 30.3204 15.5901 30.3204 17.9834C30.3204 20.3766 32.2978 22.3167 34.7371 22.3167Z"
-                fill="var(--color-green)" />
+                fill="var(--font-color-secondary)" />
               <path
                 d="M11.0417 34.6666C6.625 36.8333 6.625 45.5 6.625 45.5C10.7128 45.3855 14.6261 43.8497 17.6667 41.1666L11.0417 34.6666Z"
-                fill="var(--color-green)" />
+                fill="var(--font-color-secondary)" />
             </svg>
             Social Media Design</li>
         </ul>
@@ -152,32 +173,32 @@
         <h2 class="hidden">My Experience</h2>
 
         <div class="experience__container">
-          <h3 class="experience__title">Education</h3>
+          <h4 class="experience__title">Education</h4>
 
           <div class="experience__item">
-            <h4 class="experience__item-title">Mechanical Engineering</h4>
+            <h5 class="experience__item-title">Mechanical Engineering</h5>
             <p class="experience__item-place">Odesa State Technical University</p>
             <p class="experience__item-period">2015 - 2017</p>
           </div>
 
           <div class="experience__item">
-            <h4 class="experience__item-title">Full-Stack Developer</h4>
+            <h5 class="experience__item-title">Full-Stack Developer</h5>
             <p class="experience__item-place">Hillel IT School</p>
             <p class="experience__item-period">2023 - 2024</p>
           </div>
         </div>
 
         <div class="experience__container">
-          <h3 class="experience__title">Jobs</h3>
+          <h4 class="experience__title">Jobs</h4>
 
           <div class="experience__item">
-            <h4 class="experience__item-title">User Support Technical</h4>
+            <h5 class="experience__item-title">User Support Technical</h5>
             <p class="experience__item-place">Noname company</p>
             <p class="experience__item-period">2019 - 2024</p>
           </div>
 
           <div class="experience__item">
-            <h4 class="experience__item-title">Full-Stack Developer</h4>
+            <h5 class="experience__item-title">Full-Stack Developer</h5>
             <p class="experience__item-place">Hillel IT School</p>
             <p class="experience__item-period">2024 - Today</p>
           </div>
@@ -211,6 +232,16 @@
           <li class="bg-dots__item bg-dots--group-4"></li>
         </ul>
       </div>
+    </section>
+
+    <section class="projects">
+      <div class="container">
+        <h2 class="projects__title">Projects <i class="projects__line"></i></h2>
+        <div class="projects__content">
+          <div class="projects__item">Not now</div>
+        </div>
+      </div>
+
     </section>
   </main>
 </body>
