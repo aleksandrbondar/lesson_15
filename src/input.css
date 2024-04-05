@@ -350,8 +350,8 @@ strong {
 .projects::after {
   @apply block absolute z-10;
   content: '';
-  height: 66.75rem;
-  width: 66.75rem;
+  height: 50rem;
+  width: 50rem;
   /* margin-top: -33.375rem; */
   /* margin-left: -33.375rem; */
   background-color: var(--bg-color-social);
@@ -361,15 +361,15 @@ strong {
 .projects::before {
   bottom: 12rem;
   left: 15rem;
-  margin-bottom: -33.375rem;
-  margin-left: -33.375rem;
+  margin-bottom: -25rem;
+  margin-left: -25rem;
 }
 
 .projects::after {
   top: 12rem;
   right: 15rem;
-  margin-top: -33.375rem;
-  margin-right: -33.375rem;
+  margin-top: -25rem;
+  margin-right: -25rem;
 }
 
 .projects__title {
