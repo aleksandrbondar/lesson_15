@@ -30,6 +30,23 @@
 
   /* BORDERS COLOR */
   --border-color-primary: #000000;
+
+  /* CAROUSEL */
+  --carousel-height: calc(100vh - 14rem);
+  --carousel-radius: 0.5em;
+  --carousel-nav-btn-dim: 3em;
+  --carousel-page-nav-btn-dim: 0.5em;
+  --carousel-caption-padding: 2em;
+  --carousel-caption-bg: linear-gradient(to bottom,
+      transparent,
+      hsl(0 0 0 / 65%) 80%);
+  --carousel-inner-spacing: 2em;
+  --carousel-prev-next-btn-bg: var(--font-color-quinary);
+  --carousel-prev-next-btn-color: var(--font-color-quaternary);
+  --carousel-pagination-margin: 1em;
+  --carousel-pagination-gap: 0.75em;
+  --carousel-pagination-btn-bg: var(--font-color-tertiary);
+  --carousel-pagination-btn-active-bg: var(--font-color-secondary);
 }
 
 
@@ -148,19 +165,20 @@ strong {
 
 /* absolute item navigation */
 .nav {
-  @apply absolute max-md:hidden top-10 left-0 w-full z-30;
+  @apply absolute top-10 left-0 w-full z-30;
 }
 
 .nav__list {
   @apply flex gap-12 w-auto mx-auto my-0 justify-center items-center;
+  @apply max-md:grid max-md:grid-cols-2 max-md:gap-4 max-md:mt-4 max-md:justify-center max-md:pr-24 max-md:justify-items-center;
 }
 
 .nav__item {
-  @apply relative;
+  @apply container max-md:hidden;
 }
 
 .nav__link {
-  @apply text-xl block relative font-bold pt-3 pb-2 px-3;
+  @apply text-xl block relative font-bold py-3 px-3;
   color: var(--font-color-primary);
   border-bottom: 4px solid transparent;
   transition: all 0.3s ease-in-out;
@@ -172,6 +190,64 @@ strong {
 .nav__link--active {
   color: var(--font-color-secondary);
   border-bottom: 4px solid var(--font-color-secondary);
+}
+
+.list--show {
+  @apply block;
+}
+
+.nav__btn {
+  @apply max-md:block md:hidden;
+  width: 60px;
+  height: 45px;
+  position: absolute;
+  margin-block: 2.5rem;
+  margin-left: auto;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  top: 0;
+  right: 1rem;
+}
+
+.nav__btn span {
+  display: block;
+  position: absolute;
+  height: 9px;
+  width: 100%;
+  background: var(--bg-color-primary);
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.nav__btn span:nth-of-type(1) {
+  top: 0px;
+}
+
+.nav__btn span:nth-of-type(2) {
+  top: 18px;
+}
+
+.nav__btn span:nth-of-type(3) {
+  top: 36px;
+}
+
+.nav__btn.active span:nth-of-type(1) {
+  top: 18px;
+  transform: rotate(135deg);
+}
+
+.nav__btn.active span:nth-of-type(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+.nav__btn.active span:nth-of-type(3) {
+  top: 18px;
+  transform: rotate(-135deg);
 }
 
 .hero {
@@ -433,12 +509,17 @@ strong {
 }
 
 .projects {
-  @apply relative h-screen flex flex-col overflow-hidden;
+  @apply relative flex flex-col overflow-hidden;
   background-color: var(--bg-color-quaternary);
+  height: max(100vh, 800px);
+}
+
+.projects__box {
+  @apply absolute z-20 top-0 bottom-0 left-0 right-0;
 }
 
 .projects .container {
-  @apply relative h-full z-20 py-24 top-0 bottom-0;
+  @apply h-full flex flex-col;
 }
 
 .projects::before,
@@ -447,8 +528,6 @@ strong {
   content: '';
   height: 50rem;
   width: 50rem;
-  /* margin-top: -33.375rem; */
-  /* margin-left: -33.375rem; */
   background-color: var(--bg-color-social);
   clip-path: circle(50% at 50% 50%);
 }
@@ -471,10 +550,132 @@ strong {
   @apply block mx-auto text-center my-12;
 }
 
-.projects__content {
-  @apply grid items-center justify-center text-6xl;
-  min-height: calc(100% - 12rem);
+/* CAROUSEL----------------------------------------- */
+
+.carousel {
+  @apply h-full;
 }
+
+.carousel-inner {
+  overflow: hidden;
+  position: relative;
+  /* min-height: var(--carousel-height); */
+  border-radius: var(--carousel-radius);
+  width: 100%;
+  height: calc((100vw - 12rem) * 0.49);
+}
+
+.carousel-title {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+.carousel-title+.carousel-description {
+  color: #888;
+  margin-top: 0;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: transform 0.5s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.slide-content {
+  position: relative;
+  z-index: 5000;
+  height: 100%;
+}
+
+.slide-caption {
+  width: 100%;
+  position: absolute;
+  padding: var(--carousel-caption-padding);
+  left: 0;
+  bottom: 0;
+  background-image: var(--carousel-caption-bg);
+}
+
+.slide-caption a {
+  color: currentColor;
+}
+
+.slide-caption h3,
+.slide-caption p {
+  margin: 0;
+}
+
+.slide-caption p {
+  color: var(--font-color-primary);
+  text-shadow: 0 0 3px var(--shadow-color-primary);
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-btn {
+  width: var(--carousel-nav-btn-dim);
+  height: var(--carousel-nav-btn-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--carousel-prev-next-btn-color);
+  background-color: var(--carousel-prev-next-btn-bg);
+}
+
+.carousel-btn--prev-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.1s ease-in-out;
+}
+
+.carousel-btn--prev-next:hover {
+  transform: translateY(-50%) scale(1.2);
+}
+
+.carousel-btn--prev {
+  left: var(--carousel-inner-spacing);
+}
+
+.carousel-btn--next {
+  right: var(--carousel-inner-spacing);
+}
+
+.carousel-pagination {
+  margin-top: var(--carousel-pagination-margin);
+  display: flex;
+  gap: var(--carousel-pagination-gap);
+  justify-content: center;
+  margin-top: -2rem;
+  z-index: 7000;
+  position: relative;
+}
+
+.carousel-pagination .carousel-btn {
+  background-color: var(--carousel-pagination-btn-bg);
+  height: var(--carousel-page-nav-btn-dim);
+  width: var(--carousel-page-nav-btn-dim);
+  border-radius: 50%;
+  color: transparent;
+  transition: transform 0.25s, background-color 0.25s ease-in-out;
+}
+
+.carousel-pagination .carousel-btn--active {
+  transform: scale(1.5);
+  background-color: var(--carousel-pagination-btn-active-bg);
+}
+
+/* CAROUSEL END----------------------------------------- */
+
+
 
 .contact {
   @apply max-lg:my-24 lg:my-52 mx-10;

@@ -13,14 +13,21 @@
 
     <!------------------------------NAV----------------------------------->
     <nav class="nav">
-      <div class="container">
+
+      <div class="nav__item">
         <ul class="nav__list">
-          <li class="nav__item"><a class="nav__link nav__link--active" href="#">Home</a></li>
-          <li class="nav__item"><a class="nav__link" href="#">About Me</a></li>
-          <li class="nav__item"><a class="nav__link" href="#">Projects</a></li>
-          <li class="nav__item"><a class="nav__link" href="#">Contact</a></li>
+          <li><a class="nav__link nav__link--active" href="#">Home</a></li>
+          <li><a class="nav__link" href="#">About Me</a></li>
+          <li><a class="nav__link" href="#">Projects</a></li>
+          <li><a class="nav__link" href="#">Contact</a></li>
         </ul>
       </div>
+
+      <div class="nav__btn">
+        <span></span>
+        <span></span>
+        <span></span>
+        <div>
     </nav>
 
     <!------------------------------HERO----------------------------------->
@@ -233,13 +240,60 @@
     </section>
 
     <section class="projects">
-      <div class="container">
-        <h2 class="projects__title">Projects <i class="projects__line"></i></h2>
-        <div class="projects__content">
-          <div class="projects__item">Not now</div>
+      <div class="projects__box">
+        <div class="container">
+          <h2 class="projects__title">Projects <i class="projects__line"></i></h2>
+          <div class="projects__content">
+
+            <!-- CAROUSEL -->
+            <div id="carousel-1" class="carousel" role="region" aria-labelledby="carousel-1-title">
+              <div class="slide" role="tabpanel" aria-labelledby="carousel-1-slide-1-title">
+                <div class="slide-content">
+                  <div class="slide-caption">
+                    <h5 id="carousel-1-slide-1-title">Nanda Kot peak</h5>
+                    <p>Mukteshwar, Uttarakhand</p>
+                  </div>
+
+                  <img src="https://source.unsplash.com/gkIXFjDRyDc/1600x700" alt="slide1" />
+                </div>
+              </div>
+
+              <div class="slide" role="tabpanel" aria-labelledby="carousel-1-slide-2-title">
+                <div class="slide-content">
+                  <div class="slide-caption">
+                    <h5 id="carousel-1-slide-2-title">Manali Mountains</h5>
+                    <p>Manali, Himachal Pradesh</p>
+                  </div>
+                  <img src="https://source.unsplash.com/oIXJ839p55k/1600x700" alt="Manali Mountains" />
+                </div>
+              </div>
+
+              <div class="slide" role="tabpanel" aria-labelledby="carousel-1-slide-3-title">
+                <div class="slide-content">
+                  <div class="slide-caption">
+                    <h5 id="carousel-1-slide-3-title">Aotearoa</h5>
+                    <p>New Zealand</p>
+                  </div>
+
+                  <img src="https://source.unsplash.com/MlWRXR18fAg/1600x700" alt="Aotearoa" />
+                </div>
+              </div>
+              <div class="slide" role="tabpanel" aria-labelledby="carousel-1-slide-4-title">
+                <div class="slide-content">
+                  <div class="slide-caption">
+                    <h3 id="carousel-1-slide-4-title">Richmond Park</h3>
+                    <p>London, England</p>
+                  </div>
+
+                  <img src="https://source.unsplash.com/jlVEj8IDPQc/1600x700" alt="London’s Richmond Park" />
+                </div>
+              </div>
+            </div>
+            <!-- CAROUSEL END -->
+
+          </div>
         </div>
       </div>
-
     </section>
 
     <section class="contact">
@@ -322,6 +376,8 @@
   <footer class="footer">
     <p class="footer__content">Copyright © 2024. All Rights Reserved.</p>
   </footer>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>
