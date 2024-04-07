@@ -3,7 +3,7 @@ $(document).ready(function () {
 
   $('.nav__btn').on('click', function () {
     $(this).toggleClass('active');
-    $('.nav__item').toggleClass('list--show');
+    $('.nav__item').slideToggle();
   });
 
 });

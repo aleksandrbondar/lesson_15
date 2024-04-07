@@ -39,7 +39,7 @@
   --carousel-caption-padding: 2em;
   --carousel-caption-bg: linear-gradient(to bottom,
       transparent,
-      hsl(0 0 0 / 65%) 80%);
+      rgba(0, 0, 0, 0.65) 80%);
   --carousel-inner-spacing: 2em;
   --carousel-prev-next-btn-bg: var(--font-color-quinary);
   --carousel-prev-next-btn-color: var(--font-color-quaternary);
@@ -159,7 +159,7 @@ strong {
 .header {
   @apply relative w-full overflow-hidden bg-no-repeat bg-cover;
   height: max(100vh, 800px);
-  background-image: url('../assets/img/header_bg.jpg');
+  background-image: url('../img/header_bg.jpg');
   background-position: right;
 }
 
@@ -175,6 +175,7 @@ strong {
 
 .nav__item {
   @apply container max-md:hidden;
+  transition: all 0.3s ease-in-out;
 }
 
 .nav__link {
@@ -190,10 +191,6 @@ strong {
 .nav__link--active {
   color: var(--font-color-secondary);
   border-bottom: 4px solid var(--font-color-secondary);
-}
-
-.list--show {
-  @apply block;
 }
 
 .nav__btn {
@@ -288,7 +285,7 @@ strong {
   font-size: 3.125rem;
   line-height: 4rem;
   font-weight: var(--font-weight-primary);
-  color: rgba(var(--shadow-color-primary, var(--shadow-opacity)));
+  color: rgba(var(--shadow-color-primary), var(--shadow-opacity));
   text-shadow: 0 0 3px var(--font-color-primary);
 }
 
